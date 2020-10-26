@@ -42,8 +42,8 @@ class EasyPass:
     def get_list_of_test_url(self):
         self.driver.get(config.student_page)
         self.find(By.XPATH, "//a[span/strong[contains(text(), 'ONLINE_A')]]").click()
-        sleep(1)
-        link = self.driver.find_elements_by_xpath("//div[@class='row student_row_b']/div/a")[-1].get_attribute("href")
+        self.find(By.XPATH, ".//div[@class='row student_row_b']/div/a")
+        link = self.driver.find_elements_by_xpath(".//div[@class='row student_row_b']/div/a")[-1].get_attribute("href")
         return link
 
     def open_list_of_tests(self):
