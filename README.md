@@ -17,7 +17,7 @@ You can find out your version of Chrome by going to ... (in top right) -> Help -
 After that you can download the correct version of driver from:
 [Link](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
-Extract file somewhere on you system and path to the driver add to the config.py file as well with your UCO and primary password
+Extract file somewhere on you system and add path to the driver to the config.py file (leave the r before the string) as well with your UCO and primary password
 
 # How to use?
 After Installation you can just run the program.
