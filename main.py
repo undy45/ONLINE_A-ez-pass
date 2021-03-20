@@ -25,13 +25,13 @@ class EasyPass:
             if link is None:
                 continue
             self.driver.get(link)
-            self.find(By.LINK_TEXT, "Spustit nový odpovědník").click()
+            self.find(By.XPATH, "//button[contains(text(), 'Spustit nový odpovědník')]").click()
             self.find(By.XPATH, "//button[contains(text(), 'Odevzdat')]").click()
             self.find(By.LINK_TEXT, "Prohlídka").click()
             answers = self.driver.find_elements_by_xpath("//span[@class='ok']")
             answers = [answer.text[1:-1].split(',')[0].strip() for answer in answers]
             self.find(By.XPATH, "//a[contains(text(), 'Zpět')]").click()
-            self.find(By.LINK_TEXT, "Spustit nový odpovědník").click()
+            self.find(By.XPATH, "//button[contains(text(), 'Spustit nový odpovědník')]").click()
             cells = self.driver.find_elements_by_xpath("//input[@type='text']")
             for i, cell in enumerate(cells):
                 cell.send_keys(answers[i])
@@ -43,7 +43,7 @@ class EasyPass:
         self.driver.get(config.student_page)
         self.find(By.XPATH, "//a[span/strong[contains(text(), 'ONLINE_A')]]").click()
         self.find(By.XPATH, ".//div[@class='row student_row_b']/div/a")
-        link = self.driver.find_elements_by_xpath(".//div[@class='row student_row_b']/div/a")[-1].get_attribute("href")
+        link = self.driver.find_elements_by_xpath(".//div[@class='row student_row_b']/div/a")[-2].get_attribute("href")
         return link
 
     def open_list_of_tests(self):
