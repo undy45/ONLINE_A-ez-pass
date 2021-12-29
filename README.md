@@ -15,7 +15,7 @@ To use this bot you need to have a Chrome webdriver corresponding to your versio
 You can find out your version of Chrome by going to ... (in top right) -> Help -> About Google Chrome
 
 After that you can download the correct version of driver from:
-[Link](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+[Link](https://sites.google.com/chromium.org/driver/)
 
 Extract file somewhere on you system and add path to the driver to the config.py file (leave the r before the string) as well with your UCO and primary password
 
